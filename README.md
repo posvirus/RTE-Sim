@@ -84,9 +84,9 @@ The model in Verilog-A comprises four sub-modules:
 |   `mus_Gen`   |            Generate the scattering coefficient            |
 | `top_module`  | Combined module of `Core_Filter`, `mua_Gen` and `mus_Gen` |
 
-<img src="https://raw.githubusercontent.com/posvirus/Image_storage/main/img/202307232155243.png" alt="图片2" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/posvirus/Image_storage/main/img/202307232155243.png" alt="图片2" style="zoom:25%;" />
 
-<img src="https://raw.githubusercontent.com/posvirus/Image_storage/main/img/202307232155408.png" alt="图片3" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/posvirus/Image_storage/main/img/202307232155408.png" alt="图片3" style="zoom:25%;" />
 
 The model accepts a quantized voltage source as input, and the model's parameters are similar to the SIMULINK model and can be easily configured through Cadence Virtuoso's GUI:
 
