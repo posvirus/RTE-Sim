@@ -96,7 +96,8 @@ The model accepts a quantized voltage source as input, and the model's parameter
 
 [@Wenyao Chen](https://github.com/posvirus).
 
-##Contributors
+## Contributors
 
 This project exists thanks to all the people who contribute.
 
+## License
