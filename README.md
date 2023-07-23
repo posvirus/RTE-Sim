@@ -42,7 +42,7 @@ To cite RTE-Sim in your research:
 
 The model is composed only of SIMULINK model file ( `MATLAB\RTE_Sim.slx` ), so the installation process for MATLAB users is as simple as downloading the code. Please ensure that you have installed [SIMULINK](https://ww2.mathworks.cn/products/simulink.html) before running the model.
 
-[Get the latest release of RTE-Sim (MATLAB)]()
+[Get the latest release of RTE-Sim (MATLAB)](https://github.com/posvirus/RTE-Sim/releases/tag/v1.0.0)
 
 ### Installation of RTE-Sim (Verilog-A)
 
@@ -50,7 +50,7 @@ The model constructed in Verilog-A is compatible with Cadence Virtuoso's simulat
 
 Moreover, users interested in the Verilog-A code can just download the specific code file (you can find it in `Verilog-A\<module_name>\veriloga\veriloga.va` ) and independently build the model.
 
-[Get the latest release of RTE-Sim (Verilog-A)]()
+[Get the latest release of RTE-Sim (Verilog-A)](https://github.com/posvirus/RTE-Sim/releases/tag/v1.0.0)
 
 ## Usage
 
