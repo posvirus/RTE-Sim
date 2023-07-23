@@ -90,7 +90,7 @@ The model in Verilog-A comprises four sub-modules:
 
 The model accepts a quantized voltage source as input, and the model's parameters are similar to the SIMULINK model and can be easily configured through Cadence Virtuoso's GUI:
 
-<img src="https://raw.githubusercontent.com/posvirus/Image_storage/main/img/202307232217351.png" alt="图片4" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/posvirus/Image_storage/main/img/202307232217351.png" alt="图片4" style="zoom: 25%;" />
 
 ## Maintainers
 
