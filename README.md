@@ -101,3 +101,5 @@ The model accepts a quantized voltage source as input, and the model's parameter
 This project exists thanks to all the people who contribute.
 
 ## License
+
+[MIT](https://github.com/RichardLitt/standard-readme/blob/main/LICENSE) © Wenyao Chen
