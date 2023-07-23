@@ -1,0 +1,38 @@
+// VerilogA for fNIRS, Core_Filter, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+`define PI 3.14159265358979323846
+
+module Core_Filter (src_in,dens_out,mua,mus);
+
+input src_in,mua,mus;
+output dens_out;
+
+electrical src_in,dens_out,mua,mus,attu_node;
+
+parameter real cm = 2.25564e11 from (0:inf); // The speed of light
+parameter real distance = 30 from (0:inf); // The S/D distance
+parameter real coef0 = 0.35 from (0:inf); // Modified coefficient 0
+parameter real coef1 = 7.5e-3 from (0:inf); // Modified coefficient 1
+parameter real maxdelay = 10 from (0:inf);  // Max delay of the delay function
+
+real gain,tdelay; // gain is the attenuation of the amplitude, tdelay is the time delay
+real kappa; // The diffusion coefficient
+
+analog begin
+
+	@(initial_step) begin
+		kappa = 0.1;
+		gain = 0;
+		tdelay = 0;
+	end
+
+	kappa = 1/(3*(mu_a+mu_s));
+	gain = (1/(coef1*sqrt(pow(distance,2)+pow(mu_s,-2))+coef0))*(exp(-sqrt(mu_a/kappa)*sqrt(pow(distance,2)+pow(mu_s,-2))))/(4*`PI*kappa*sqrt(pow(distance,2)+pow(mu_s,-2)));
+	tdelay = distance*sqrt(mu_a/kappa)/(2*cm*mu_a)*1e6;
+	V(attu_node) <+ gain*V(src_in);
+	V(dens_out) <+ absdelay(V(attu_node),tdelay,maxdelay);
+end
+
+endmodule

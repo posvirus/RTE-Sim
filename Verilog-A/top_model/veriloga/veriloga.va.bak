@@ -1,0 +1,38 @@
+// VerilogA for fNIRS, top_model, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module top_model(HbO_in, HbR_in, Water_in, dens_out, src_in);
+
+input HbO_in,HbR_in,Water_in,src_in;
+output dens_out;
+
+electrical HbO_in,HbR_in,Water_in,src_in,dens_out;
+
+electrical mua,mus; // Temp node
+
+parameter real cm = 2.25564e11 from (0:inf); // The speed of light
+parameter real distance = 30 from (0:inf); // The S/D distance
+parameter real coef0 = 0.35 from (0:inf); // Modified coefficient 0
+parameter real coef1 = 7.5e-3 from (0:inf); // Modified coefficient 1
+parameter real maxdelay = 10 from (0:inf);  // Max delay of the delay function
+
+parameter real HbO_baseline = 30 from (0:inf); // The baseline concentration of HbO
+parameter real HbR_baseline = 0.35 from (0:inf); // The baseline concentration of HbR
+parameter real Water_baseline = 7.5e-3 from (0:inf); // The baseline concentration of Water
+parameter real wave_len = 660 from (600:1000); // The wave length of light
+
+parameter real scatter_amplitude = 0.76 from (0:inf); // The scatter amplitude
+parameter real scatter_power = 0.76 from (0:inf); // The scatter power
+
+Core_Filter #(.cm(cm),.distance(distance),.coef0(coef0),.coef1(coef1),.maxdelay(maxdelay))
+	        u_Core_Filter (src_in,dens_out,mua,mus);
+
+mua_Gen #(.HbO_baseline(HbO_baseline),.HbR_baseline(HbR_baseline),.Water_baseline(Water_baseline),.wave_len(wave_len))
+		u_mua_Gen(HbO_in,HbR_in,Water_in,mua);
+
+mus_Gen #(.wave_len(wave_len),.scatter_amplitude(scatter_amplitude),.scatter_power(scatter_power))
+		u_mus_Gen(mus);
+
+endmodule

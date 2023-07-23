@@ -1,0 +1,23 @@
+// VerilogA for fNIRS, mus_Gen, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module mus_Gen (mus_out);
+
+output mus_out;
+
+electrical mus_out;
+
+parameter real wave_len = 660 from (600:1000); // The wave length of light
+parameter real scatter_amplitude = 0.76 from (0:inf); // The scatter amplitude
+parameter real scatter_power = 0.76 from (0:inf); // The scatter power
+
+analog begin
+	@(initial_step) begin
+		V(mus_out) <+ 1e-5;
+	end
+	V(mus_out) <+ scatter_amplitude*pow(wave_len*(1e-3),-scatter_power);
+end
+
+endmodule
