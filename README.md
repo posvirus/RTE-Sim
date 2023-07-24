@@ -96,6 +96,11 @@ The model accepts a quantized voltage source as input, and the model's parameter
 
 This project exists thanks to all the people who contribute.
 
+<a href="https://github.com/posvirus/RTE-Sim/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=posvirus/RTE-Sim" />
+</a>
+
+
 ## License
 
 [MIT](https://github.com/RichardLitt/standard-readme/blob/main/LICENSE) © Wenyao Chen
