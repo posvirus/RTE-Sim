@@ -62,16 +62,16 @@ The model can be used in the same way as a ordinary SIMULINK model.
 
 The figure above illustrates the simulation of the light propagation process for a specific brain activity by configuring the parameters accordingly. Below is a list of some parameters that require configuration:
 
-|   Parameter   |     Units     |                 Interpretation                 |
-| :-----------: | :-----------: | :--------------------------------------------: |
-|     `wv`      |      nm       |         Wavelength of the light source         |
-|     `sp`      |      n/a      |              Scattering amplitude              |
-|     `sa`      |      n/a      |                Scattering power                |
-|     `cm`      |     mm/s      |           Speed of light in tissues            |
-| `coef1,coef2` |      n/a      | Correction factors for the analytical solution |
-|      `r`      |      mm       |            Source/detector distance            |
-|   `x_base`    | mmol/mm$^{3}$ |         Baseline concentration of `x`          |
-|    `x_ch`     | mmol/mm$^{3}$ |          Concentration change of `x`           |
+|   Parameter   |     Units      |                 Interpretation                 |
+| :-----------: | :------------: | :--------------------------------------------: |
+|     `wv`      |       nm       |         Wavelength of the light source         |
+|     `sp`      |      n/a       |              Scattering amplitude              |
+|     `sa`      |      n/a       |                Scattering power                |
+|     `cm`      |      mm/s      |           Speed of light in tissues            |
+| `coef1,coef2` |      n/a       | Correction factors for the analytical solution |
+|      `r`      |       mm       |            Source/detector distance            |
+|   `x_base`    | mmol/mm $^{3}$ |         Baseline concentration of `x`          |
+|    `x_ch`     | mmol/mm $^{3}$ |          Concentration change of `x`           |
 
 ### Usage of RTE-Sim (Verilog-A)
 
@@ -84,7 +84,7 @@ The model in Verilog-A comprises four sub-modules:
 |   `mus_Gen`   |            Generate the scattering coefficient            |
 | `top_module`  | Combined module of `Core_Filter`, `mua_Gen` and `mus_Gen` |
 
-The model accepts a quantized voltage source as input, and the model's parameters are similar to the SIMULINK model and can be easily configured through Cadence Virtuoso's GUI:
+The model accepts a quantized voltage source as input, and the model's parameters are similar to the SIMULINK model which can be easily configured through Cadence Virtuoso's GUI:
 
 ![图片5](https://raw.githubusercontent.com/posvirus/Image_storage/main/img/202307241014065.png)
 
