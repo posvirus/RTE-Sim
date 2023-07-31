@@ -1,6 +1,6 @@
 # RTE-Sim
 
-Compact model for light propagation simulation in fNIRS systems
+Compact model for light propagation simulation in fNIRS systems.
 
 ## Background
 
